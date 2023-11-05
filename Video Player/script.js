@@ -22,14 +22,28 @@ function updatePlayIcon() {
   }
 }
 
-// Update progress & timestamp
+// Update progress & timestamp Play를 누르면 영상 Bar가 움직임
 function updateProgress() {
-  return true;
+  progress.value = (video.currentTime / video.duration) * 100;
+
+  // Get minutes
+  let mins = Math.floor(video.currentTime / 60);
+  if (mins < 10) {
+    mins = "0" + String(mins);
+  }
+
+  // Get seconds
+  let secs = Math.floor(video.currentTime % 60);
+  if (secs < 10) {
+    secs = "0" + String(secs);
+  }
+
+  timestamp.innerHTML = `${mins}:${secs}`;
 }
 
-// Set video time to progress
+// Set video time to progress 임의 위치를 지정하면 Bar와 Video 영상이 정해짐
 function setVideoProgress() {
-  return true;
+  video.currentTime = (+progress.value * video.duration) / 100;
 }
 
 // Stop video
