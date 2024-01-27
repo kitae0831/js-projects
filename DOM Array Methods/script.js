@@ -29,7 +29,7 @@ async function getRandomUser() {
 // Double everyones money
 function doubleMoney() {
   data = data.map((user) => {
-    return { ...user, money: user.oney * 2 };
+    return { ...user, money: user.money * 2 };
   });
 
   updateDOM();
