@@ -64,7 +64,7 @@ function getRandomMeal() {
   mealsEl.innerHTML = "";
   resultHeading.innerHTML = "";
 
-  fetch(`https://www.tehmealdb.com/api/json/v1/1/random.php`)
+  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
     .then((res) => res.json())
     .then((data) => {
       const meal = data.meals[0];
