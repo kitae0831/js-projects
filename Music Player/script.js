@@ -100,7 +100,7 @@ playBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", prevSong);
 nextBtn.addEventListener("click", nextSong);
 
-// Time/song update
+// Time song update
 audio.addEventListener("timeupdate", updateProgress);
 
 // Click on progress bar
