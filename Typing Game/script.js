@@ -5,7 +5,7 @@ const timeEl = document.getElementById("time");
 const endgameEl = document.getElementById("end-game-container");
 const settingsBtn = document.getElementById("settings-btn");
 const settings = document.getElementById("settings");
-const settingsForm = document.getElementById("settings=form");
+const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
 
 // List of words for game
@@ -40,6 +40,18 @@ let score = 0;
 
 // Init imte
 let time = 10;
+
+// Set difficulty to value in ls or medium
+let difficulty =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "medium";
+
+// Set difficulty select value
+difficultySelect.value =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "medium";
 
 // Focus on text on start
 text.focus();
@@ -101,8 +113,23 @@ text.addEventListener("input", (e) => {
     // Clear
     e.target.value = "";
 
-    time += 2;
+    if (difficulty === "hard") {
+      time += 2;
+    } else if (difficulty === "medium") {
+      time += 3;
+    } else {
+      time += 5;
+    }
 
     updateTime();
   }
+});
+
+// Settings btn click
+settingsBtn.addEventListener("click", () => settings.classList.toggle("hide"));
+
+// Settings select
+settingsForm.addEventListener("change", (e) => {
+  difficulty = e.target.value;
+  localStorage.setItem("difficulty", difficulty);
 });
