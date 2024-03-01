@@ -93,7 +93,7 @@ function draw() {
   drawBall();
   drawPaddle();
   drawScore();
-  drawBricks();
+  drawBricks;
 }
 
 draw();
