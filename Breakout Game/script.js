@@ -92,7 +92,7 @@ function drawBricks() {
 function draw() {
   drawBall();
   drawPaddle();
-  drawScore();
+  drawScore;
   drawBricks();
 }
 
