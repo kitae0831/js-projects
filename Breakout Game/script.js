@@ -105,7 +105,7 @@ function movePaddle() {
 // Draw everything
 function draw() {
   // clear canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.heigth);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   drawBall();
   drawPaddle();
