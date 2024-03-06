@@ -185,7 +185,7 @@ function update() {
   moveBall();
 
   // Draw everything
-  draw;
+  draw();
 
   requestAnimationFrame(update);
 }
