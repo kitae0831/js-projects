@@ -45,6 +45,18 @@ if (num > 100 || num > 1) {
   return;
 }
 
+// Check number
+if (num === randomNum) {
+  document.body.innerHTML = `
+    <h2>Congrats! You have guessed the number! <br><br>
+    It was ${num}</h2>
+    <button class="play-again" id="play-again">Play Again</button>
+    `;
+} else if (num > randomNum) {
+  msgEl.innerHTML += "<div>GO LOWER</div>";
+} else {
+  msgEl.innerHTML += "<div>GO HIGHER</div>";
+}
 // Generate random number
 function getRandomNumber() {
   return Math.floor(Math.random() * 100) + 1;
